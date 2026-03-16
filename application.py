@@ -11,11 +11,6 @@ app = application
 # Route for home page
 
 
-@app.route('/')
-def index():
-    return render_template('index.html')
-
-
 @app.route('/predictdata', methods=['GET', 'POST'])
 def predict_datapoint():
     if request.method == 'GET':
@@ -42,4 +37,4 @@ def predict_datapoint():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+    app.run(host='0.0.0.0', debug=True)
