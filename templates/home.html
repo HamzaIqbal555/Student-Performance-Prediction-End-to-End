@@ -92,12 +92,10 @@
                         </button>
                     </div>
                 </form>
-                {% if results is defined %}
                 <div id="result" style="display: none;">
                     <h3>Predicted Math Score</h3>
-                    <div class="score">{{ results }} / 100</div>
+                    <div class="score" id="scoreValue">0 / 100</div>
                 </div>
-                {% endif %}
             </div>
             <div class="card-footer">
                 <p>CatBoost ML Model • End-to-End Project</p>
