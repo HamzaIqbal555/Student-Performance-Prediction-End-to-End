@@ -10,6 +10,7 @@ from datetime import datetime
 application = Flask(__name__)
 app = application
 
+# testing auto deployment
 # BigQuery setup
 BQ_CLIENT = bigquery.Client()
 BQ_TABLE = "student-ml-project.student_predictions.predictions"
