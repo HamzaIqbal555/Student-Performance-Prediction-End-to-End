@@ -48,7 +48,7 @@ docker build -t ml-student-predictor .
 docker run -p 5000:5000 ml-student-predictor
 ```
 
-## 🔮 How it Works
+\n\n## 🌐 Live Demo & API\n**Production API for testing predictions!** (Google Cloud Run)\n\n**Base URL**: https://student-performance-prediction-end-to-end-393040721523.europe-west1.run.app/\n\n**Test the Predictor**:\nUse POST `/predict` with JSON payload (inputs: gender, race_ethnicity, parental_level_of_education, lunch, test_preparation_course, reading_score, writing_score).\n\n**Example curl**:\n```bash\ncurl -X POST https://student-performance-prediction-end-to-end-393040721523.europe-west1.run.app/predict \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"gender\": \"male\",\n    \"race_ethnicity\": \"group B\",\n    \"parental_level_of_education\": \"bachelor\\u0027s degree\",\n    \"lunch\": \"standard\",\n    \"test_preparation_course\": \"none\",\n    \"reading_score\": 72,\n    \"writing_score\": 74\n  }'\n```\nReturns: `{\"predicted_average_score\": <value>}`\n\n\n## 🔮 How it Works
 1. **Data** → EDA in notebooks.
 2. **Train**: Pipelines ingest/transform/train (CatBoost > others).
 3. **Predict**: Load model/preprocessor → Scale inputs → Predict.
